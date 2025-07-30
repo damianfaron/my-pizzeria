@@ -1,5 +1,7 @@
 /* global Handlebars, utils, dataSource */ // eslint-disable-line no-unused-vars
 
+// const { init } = require('browser-sync');
+
 {
   ('use strict');
 
@@ -31,12 +33,18 @@
         linkIncrease: 'a[href="#more"]',
       },
     },
+    cart: {
+      toggleTrigger: '.cart__summary',
+    },
   };
 
   const classNames = {
     menuProduct: {
       wrapperActive: 'active',
       imageVisible: 'active',
+    },
+    cart: {
+      wrapperActive: 'active',
     },
   };
 
@@ -223,8 +231,8 @@
     constructor(element) {
       const thisWidget = this;
 
-      console.log('Amount Widget', thisWidget);
-      console.log('contructor arguments: ', element);
+      // console.log('Amount Widget', thisWidget);
+      // console.log('contructor arguments: ', element);
       thisWidget.getElements(element);
       // const inputValue = thisWidget.input.value;
       // if (inputValue !== '' && !isNaN(inputValue)) {
@@ -312,7 +320,42 @@
       thisWidget.element.dispatchEvent(event);
     }
   }
+  /*==================================================================================
+  // class CART
+===================================================================================*/
+  class Cart {
+    constructor(element) {
+      const thisCart = this;
 
+      thisCart.products = [];
+
+      thisCart.getElements(element);
+      thisCart.initActions();
+
+      console.log('new Cart:', thisCart);
+    }
+    getElements(element) {
+      const thisCart = this;
+
+      thisCart.dom = {};
+
+      thisCart.dom.wrapper = element;
+
+      thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(
+        select.cart.toggleTrigger
+      );
+    }
+    initActions() {
+      const thisCart = this;
+
+      thisCart.dom.toggleTrigger.addEventListener('click', function () {
+        thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive);
+      });
+    }
+  }
+  /*==================================================================================
+  // APP
+===============================================================================*/
   const app = {
     initMenu: function () {
       // const testProduct = new Product();
@@ -330,7 +373,12 @@
       thisApp.data = dataSource;
       // console.log(dataSource);
     },
+    initCart: function () {
+      const thisApp = this;
 
+      const cartElement = document.querySelector(select.containerOf.cart);
+      thisApp.cart = new Cart(cartElement);
+    },
     init: function () {
       const thisApp = this;
       console.log('*** App starting ***');
@@ -340,6 +388,7 @@
       console.log('templates:', templates);
       thisApp.initData();
       thisApp.initMenu();
+      thisApp.initCart();
     },
   };
 
