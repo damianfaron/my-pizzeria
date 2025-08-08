@@ -204,65 +204,45 @@
   ],
   "orders": [
     {
-      "address": "",
-      "phone": "",
-      "totalPrice": 40,
-      "subtotalPrice": "20",
-      "totalNumber": "1",
+      "address": "111",
+      "phone": "aaa",
+      "totalPrice": 65,
+      "subtotalPrice": "45",
+      "totalNumber": "5",
       "deliveryFee": "20",
       "products": [
         {
-          "id": "pizza",
+          "id": "breakfast",
           "amount": 1,
-          "price": 20,
-          "priceSingle": 20,
-          "name": "Nonna Alba's Pizza",
+          "price": 9,
+          "priceSingle": 9,
+          "name": "Zia Giulia's Breakfast",
           "params": {
-            "sauce": {
-              "label": "Sauce",
+            "coffee": {
+              "label": "Coffee type",
               "options": {
-                "tomato": "Tomato"
+                "latte": "Latte"
               }
-            },
-            "toppings": {
-              "label": "Toppings",
+            }
+          }
+        },
+        {
+          "id": "breakfast",
+          "amount": 4,
+          "price": 36,
+          "priceSingle": 9,
+          "name": "Zia Giulia's Breakfast",
+          "params": {
+            "coffee": {
+              "label": "Coffee type",
               "options": {
-                "olives": "Olives",
-                "redPeppers": "Red peppers",
-                "greenPeppers": "Green peppers",
-                "mushrooms": "Mushrooms",
-                "basil": "Fresh basil"
-              }
-            },
-            "crust": {
-              "label": "pizza crust",
-              "options": {
-                "standard": "standard"
+                "latte": "Latte"
               }
             }
           }
         }
       ],
       "id": 1
-    },
-    {
-      "address": "as22",
-      "phone": "221111121",
-      "totalPrice": 92,
-      "subtotalPrice": "72",
-      "totalNumber": "8",
-      "deliveryFee": "20",
-      "products": [
-        {
-          "id": "cake",
-          "amount": 8,
-          "price": 72,
-          "priceSingle": 9,
-          "name": "Zio Stefano's Doughnut",
-          "params": {}
-        }
-      ],
-      "id": 2
     }
   ]
 }
