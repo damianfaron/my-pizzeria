@@ -20,12 +20,21 @@ class BaseWidget {
   set value(value) {
     const thisWidget = this;
     const newValue = thisWidget.parseValue(value);
+    // console.log(
+    //   'BaseWidget set value:',
+    //   value,
+    //   'parsed:',
+    //   newValue,
+    //   'old:',
+    //   thisWidget.correctValue
+    // );
 
     if (thisWidget.correctValue !== newValue && thisWidget.isValue(newValue)) {
       thisWidget.correctValue = newValue;
+      // console.log('BaseWidget announcing updated event');
       thisWidget.announce();
     }
-    // update, to last good num...
+
     thisWidget.renderValue();
   }
 

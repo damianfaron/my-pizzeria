@@ -65,9 +65,14 @@ utils.numberToHour = function (number) {
   );
 };
 
-utils.hourToNumber = function (hour) {
-  const parts = hour.split(':');
+// utils.hourToNumber = function (hour) {
+//   const parts = hour.split(':');
 
+//   return parseInt(parts[0]) + parseInt(parts[1]) / 60;
+// };
+utils.hourToNumber = function (hour) {
+  if (typeof hour === 'number') return hour; // jeśli już liczba, zwracamy od razu
+  const parts = hour.split(':');
   return parseInt(parts[0]) + parseInt(parts[1]) / 60;
 };
 
