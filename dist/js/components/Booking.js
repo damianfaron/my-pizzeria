@@ -334,7 +334,7 @@ class Booking {
       })
       .then(function (parsedResponse) {
         console.log('Rezerwacja wysłana:', parsedResponse);
-        alert('Twoja rezerwacja została przyjęta!');
+        // alert('Twoja rezerwacja została przyjęta!');
 
         // save reservation local thisBooking.booked
         thisBooking.makeBooked(

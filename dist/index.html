@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:400,300i,700%7COswald:300,500,700&amp;subset=latin-ext"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.min.css"> -->
   <!-- <link rel="stylesheet" href="src/vendor/range-slider.min.css"> -->
   <link rel="stylesheet" href="/vendor/range-slider.min.css">
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
@@ -25,6 +26,7 @@
           <h2 class="logo__subtitle">the best homemade Italian food</h2>
         </div>
         <div class="main-nav">
+          <a href="#home">Home</a>
           <a href="#order">Order</a>
           <a href="#booking">Booking</a>
         </div>
@@ -67,6 +69,9 @@
 
   <!-- <div id="product-list" class="product-list container"></div> -->
   <div id="pages">
+    <section id="home">
+      <div class="home-wrapper container"></div>
+    </section>
     <section id="order">
       <div id="product-list" class="product-list container"></div>
     </section>
@@ -248,10 +253,82 @@
     </article> <!-- .product -->
   </script>
 
+
+  <!-- home  -->
+  <script id="template-home" type="text/x-handlebars-template">
+<section class="home-wrapper">
+
+  <!-- section box -->
+  <div class="home-boxes">
+    <div class="home-box order-box">
+      <h2>Order Online</h2>
+     
+    </div>
+    <div class="home-box booking-box">
+      <h2>Book a Table</h2>
+  
+    </div>
+  </div>
+
+  <!-- box hour -->
+  <div class="home-hours-box">
+    <h2>Open hour</h2>
+    <p>TUE - SUN: 10:00 - 22:00 </p>
+  </div>
+
+  <!-- descript + img -->
+  <div class="home-description-carousel">
+    <div class="home-carousel" id="carousel-container">
+      <img src="img/pizza-1.jpg" alt="Restauracja" class="carousel-image active">
+      <img src="img/pizza-2.jpg" alt="Restauracja" class="carousel-image">
+      <img src="img/pizza-3.jpg" alt="Restauracja" class="carousel-image">
+      <img src="img/pizza-4.jpg" alt="Restauracja" class="carousel-image">
+
+      <!-- Kropki karuzeli -->
+      <div class="carousel-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+
+    <div class="home-description" id="carousel-description">
+      <div class="desc active">
+        <h3>Restaurant</h3>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+      <div class="desc">
+        <h3>Good taste!</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, nesciunt!.</p>
+      </div>
+      <div class="desc">
+        <h3>Faster than you</h3>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+      <div class="desc">
+        <h3>Comon</h3>
+        <p>Lorem ipsum dolor sit amet consectetur.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- photo cotainer -->
+  <div class="home-gallery">
+    <div class="gallery-item"><img src="img/pizza-9.jpg" alt="Gallery 1"></div>
+    <div class="gallery-item"><img src="img/pizza-8.jpg" alt="Gallery 2"></div>
+    <div class="gallery-item"><img src="img/pizza-7.jpg" alt="Gallery 3"></div>
+    <div class="gallery-item"><img src="img/pizza-6.jpg" alt="Gallery 4"></div>
+    <div class="gallery-item"><img src="img/pizza-5.jpg" alt="Gallery 5"></div>
+    <div class="gallery-item"><img src="img/pizza-4.jpg" alt="Gallery 6"></div>
+  </div>
+
+</section>
+</script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
   <script src="/vendor/range-slider.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.min.js"></script> -->
   <!-- <script src="js/functions.js"></script>
   <script src="js/data.js"></script> -->
   <script src="js/app.js" type="module"></script>
